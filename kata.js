@@ -7,14 +7,13 @@ const namesSorter = departmentsArray => {
     department.forEach(name => allNames.push(name));
   });
 
-  allNames.sort((prev, current) => {
-    if (prev.length < current.length) return -1;
-    else if (prev.length > current.length) return 1;
-    else {
-      if (prev.localeCompare(current) < 0) return -1;
-      else return 1;
-    }
-  });
+  allNames.sort((prev, current) =>
+    prev.length < current.length
+      ? -1
+      : prev.length > current.length
+      ? 1
+      : prev.localeCompare(current)
+  );
 
   return allNames;
 };
